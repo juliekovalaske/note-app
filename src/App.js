@@ -5,7 +5,7 @@ import Nav from './components/Nav';
 import List from './components/List';
 import Note from './components/Note';
 
-function App() {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -13,14 +13,16 @@ function App() {
     };
   }
   
-  const { showNote } = this.state;
+  render () {
+    const { showNote } = this.state;
 
-  return (
-    <div className="App">
-      <Nav />
-      { showNote ? <Note/> : <List /> }
-    </div>
-  );
+    return (
+      <div className="App">
+        <Nav />
+        { showNote ? <Note/> : <List /> }
+      </div>
+    );
+  }
 }
   
 
